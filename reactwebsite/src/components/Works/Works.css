@@ -1,0 +1,66 @@
+.first-line {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #a0a0b4;
+    margin-left: 15%;
+  }
+  
+  .second-line {
+    font-size: 12px;
+    line-height: 1;
+    color: #a0a0b4;
+    margin-left: 15%;
+  }
+
+
+  .button-transparent{
+    background: transparent !important;
+    color: #000000;
+    font-size: 13px;
+    /* font-weight: 700; */
+    /* padding-left: 5%; */
+    /* line-height: 28.8px; */
+    border: 1px solid #a0a0b4;
+    width: 35%;
+    padding: 0;
+
+  }
+
+  .button-transparent:hover{
+    color: #000000;
+  }
+
+  .custom-co2l{
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 1400px) {
+    .work-name1{
+        
+        margin-left:10% !important;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .work-name1{
+        
+        margin-left:30% !important;
+    }
+  }
+
+  @media (max-width: 993px) {
+    .col-card {
+        /* Add the styles you want for screens with a width of 991px or smaller here */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .work-name1 {
+        text-align: left;
+        padding: 15px;
+      }
+    
+  }

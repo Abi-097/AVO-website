@@ -9,7 +9,6 @@
     position: sticky;
     top: 0;
     z-index: 999;
-    /* font-family: "Nunito Sans", Arial, sans-serif; */
   }
   
   .navbar-container {
@@ -42,7 +41,7 @@
     grid-gap: 10px;
     list-style: none;
     text-align: center;
-    width: 60vw;
+    width: 75vw;
     justify-content: end;
     margin-right: 2rem;
     margin-top: 3rem;
