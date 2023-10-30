@@ -1,66 +1,101 @@
 .first-line {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    line-height: 1.5;
-    color: #a0a0b4;
-    margin-left: 15%;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #a0a0b4;
+  margin-left: 15%;
+}
+
+.second-line {
+  font-size: 12px;
+  line-height: 1;
+  color: #a0a0b4;
+  margin-left: 15%;
+}
+
+.button-transparent {
+  background: transparent !important;
+  color: #000000 !important;
+  font-size: 13px;
+  /* font-weight: 700; */
+  /* padding-left: 5%; */
+  /* line-height: 28.8px; */
+  border: 1px solid #a0a0b4;
+  width: 35%;
+  padding: 0;
+}
+
+.button-transparent:hover {
+    color: #000000 !important;
+}
+
+
+.custom-co2l {
+  display: flex;
+  align-items: center;
+}
+
+
+.img-responsive {
+  display: block;
+  margin: 0 auto; /* Center the image */
+  max-width: 100%; /* Make the image responsive */
+  height: auto;
+}
+
+/* test working */ 
+.custom-text-align {
+  text-align: right; /* Default right alignment */
+
+  /* Left alignment for screens with a maximum width of 768px (adjust as needed) */
+  @media (max-width: 768px) {
+    text-align: left;
   }
-  
-  .second-line {
-    font-size: 12px;
-    line-height: 1;
-    color: #a0a0b4;
-    margin-left: 15%;
+}
+/*  done */
+
+
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+@media (max-width: 1400px) {
+  .work-name1 {
+    margin-left: 10% !important;
   }
+}
 
-
-  .button-transparent{
-    background: transparent !important;
-    color: #000000;
-    font-size: 13px;
-    /* font-weight: 700; */
-    /* padding-left: 5%; */
-    /* line-height: 28.8px; */
-    border: 1px solid #a0a0b4;
-    width: 35%;
-    padding: 0;
-
+@media (max-width: 1200px) {
+  .work-name1 {
+    margin-left: 30% !important;
   }
+}
 
-  .button-transparent:hover{
-    color: #000000;
-  }
-
-  .custom-co2l{
+@media (max-width: 993px) {
+  .col-card {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
+  .work-name1 {
+    text-align: left;
+    padding: 15px;
+  }
+}
 
-  @media (max-width: 1400px) {
-    .work-name1{
-        
-        margin-left:10% !important;
-    }
-  }
 
-  @media (max-width: 1200px) {
-    .work-name1{
-        
-        margin-left:30% !important;
-    }
+@media (min-width: 993px) {
+  .main-align {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+  text-align: left !important;
   }
+}
 
-  @media (max-width: 993px) {
-    .col-card {
-        /* Add the styles you want for screens with a width of 991px or smaller here */
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .work-name1 {
-        text-align: left;
-        padding: 15px;
-      }
-    
-  }
+/* For screens 992px or smaller, reset the text alignment to the default */

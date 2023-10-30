@@ -13,18 +13,30 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import image1 from "../../Assets/Images/image2.jpg";
 import image2 from "../../Assets/Images/image3.jpg";
-import Carousel from 'react-bootstrap/Carousel';
-// import ExampleCarouselImage from './components/ExampleCarouselImage';
 
 const HeroSection = () => {
   const [count, setCount] = useState(0);
-  const [count2, setCount2] = useState(0);
-  const [index, setIndex] = useState(0);
+  const sliderRef = useRef(null);
 
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
+  useEffect(() => {
+    // Set a timeout to change the slide every 2 seconds
+    const autoRotate = setInterval(() => {
+      sliderRef.current.slickNext();
+    }, 2000);
+
+    return () => {
+      clearInterval(autoRotate); // Clear the interval when the component unmounts
+    };
+  }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
-  
+
   useEffect(() => {
     const timer = setInterval(() => {
       if (count < 400) {
@@ -32,41 +44,27 @@ const HeroSection = () => {
       } else {
         clearInterval(timer);
       }
-    }, 50);
+    }, 50); // Increment every 100 milliseconds
 
-    return () => clearInterval(timer);
+    return () => clearInterval(timer); // Cleanup the interval when the component unmounts
   }, [count]);
-
-  useEffect(() => {
-    const timer2 = setInterval(() => {
-      if (count2 < 21) {
-        setCount2(count2 + 1);
-      } else {
-        clearInterval(timer2);
-      }
-    }, 500);
-
-    return () => clearInterval(timer2);
-  }, [count2]);
   return (
     <div>
-     <div className="hero-container">
- <Carousel fade activeIndex={index} onSelect={handleSelect} interval={1000}>
-      <Carousel.Item>
-      <div className="matrix-shape">
-          <img src={image1} alt="image1" />
-        </div>
-        <div className="absolute">
-        <div className="slider-content">
+        <div className="hero-container">
+          <Slider ref={sliderRef} {...settings}>
+            <div>
+              <img src={image1} alt="image1" />
+              {/* <div> */}
+              <div className="slider-content">
                 <Container>
                   <Row className="justify-content-center">
                     <Col sm={4}>
-                      <h1 className="hero-h1">
+                      <h1>
                         WE CREATE <br />
                         MODERN &amp; <br />
                         MINIMAL WEBSITE
                       </h1>
-                      <p className="hero-p">
+                      <p>
                         A small river named Duden flows by their place and
                         supplies it with the necessary regelialia.
                       </p>
@@ -125,7 +123,7 @@ const HeroSection = () => {
                           </div>
                           {/* </div> */}
                           <p
-                            className="text-right d-sm-none number-titlealign"
+                            className="text-right d-sm-none"
                             style={{ fontSize: "14px" }}
                           >
                             More than a hundred successful projects
@@ -143,22 +141,21 @@ const HeroSection = () => {
                 </Container>
       
               </div>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item>
-      <div className="matrix-shape">
-      <img src={image2} alt="image2" /></div>
-        <div className="absolute">
-        <div className="slider-content">
+            </div>
+
+            <div>
+              <img src={image2} alt="image2" />
+              {/* <div> */}
+              <div className="slider-content">
                 <Container>
                   <Row className="justify-content-center">
                     <Col sm={4}>
-                      <h1 className="hero-h1">
+                      <h1>
                         WE CREATE <br />
                         MODERN &amp; <br />
                         MINIMAL WEBSITE
                       </h1>
-                      <p className="hero-p">
+                      <p>
                         A small river named Duden flows by their place and
                         supplies it with the necessary regelialia.
                       </p>
@@ -168,7 +165,7 @@ const HeroSection = () => {
                           buttonStyle="btn--primary"
                           buttonSize="btn--large"
                         >
-                          Explore Project
+                          Start Project
                         </Button>
                       </div>
                     </Col>
@@ -176,7 +173,7 @@ const HeroSection = () => {
                       <div>
                         <div>
                           <div className="count">
-                            <h1 className="count-wrapper">{count2}</h1>
+                            <h1 className="count-wrapper">{count}</h1>
                             <div className="vertical-line"></div>
                           </div>
                           {/* <div class="text-container"> */}
@@ -192,7 +189,7 @@ const HeroSection = () => {
                                 padding: "0",
                               }}
                             >
-                             Years of 
+                              More than a
                             </p>
                             <p
                               className="line"
@@ -202,15 +199,25 @@ const HeroSection = () => {
                                 padding: "0",
                               }}
                             >
-                              Experienced
+                              hundred successful
+                            </p>
+                            <p
+                              className="line"
+                              style={{
+                                textAlign: "right",
+                                margin: "0",
+                                padding: "0",
+                              }}
+                            >
+                              projects
                             </p>
                           </div>
                           {/* </div> */}
                           <p
-                            className="text-right d-sm-none number-titlealign"
+                            className="text-right d-sm-none"
                             style={{ fontSize: "14px" }}
                           >
-                             Years of Experienced
+                            More than a hundred successful projects
                           </p>
                         </div>
                         {/* </div> */}
@@ -225,13 +232,9 @@ const HeroSection = () => {
                 </Container>
       
               </div>
-    
-          {/* <h3>First slide label</h3> */}
-          {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
+            </div>
+          </Slider>
         </div>
-      </Carousel.Item>
-    </Carousel>
-    </div>
       </div>
     // {/* </div> */}
   );
@@ -239,3 +242,80 @@ const HeroSection = () => {
 
 export default HeroSection;
 
+
+
+// <Container>
+//         <Row className="justify-content-center">
+//           <Col sm={4}>
+//             <h1>
+//               WE CREATE <br />
+//               MODERN &amp; <br />
+//               MINIMAL WEBSITE
+//             </h1>
+//             <p>
+//               A small river named Duden flows by their place and supplies it
+//               with the necessary regelialia.
+//             </p>
+//             <div className="hero-btn2">
+//               <Button
+//                 className="btn-main"
+//                 buttonStyle="btn--primary"
+//                 buttonSize="btn--large"
+//               >
+//                 Start Project
+//               </Button>
+//             </div>
+//           </Col>
+//           <Col sm={7}>
+//             <div>
+//               <div>
+//                 <div className="count">
+//                   <h1 className="count-wrapper">{count}</h1>
+//                   <div className="vertical-line"></div>
+//                 </div>
+//                 {/* <div class="text-container"> */}
+//                 <div
+//                   className="text-container"
+//                   style={{ display: "flex", flexDirection: "column" }}
+//                 >
+//                   <p
+//                     className="line"
+//                     style={{ textAlign: "right", margin: "0", padding: "0" }}
+//                   >
+//                     More than a
+//                   </p>
+//                   <p
+//                     className="line"
+//                     style={{ textAlign: "right", margin: "0", padding: "0" }}
+//                   >
+//                     hundred successful
+//                   </p>
+//                   <p
+//                     className="line"
+//                     style={{ textAlign: "right", margin: "0", padding: "0" }}
+//                   >
+//                     projects
+//                   </p>
+//                 </div>
+//                 {/* </div> */}
+//                 <p
+//                   className="text-right d-sm-none"
+//                   style={{ fontSize: "14px" }}
+//                 >
+//                   More than a hundred successful projects
+//                 </p>
+//               </div>
+//               {/* </div> */}
+//             </div>
+//           </Col>
+//         </Row>
+//       </Container>
+//       <div className="hero-btn">
+//         <Button
+//           className="btn-circle"
+//           buttonStyle="btn--primary"
+//           buttonSize="btn--large"
+//         >
+//           <FontAwesomeIcon icon={faPlay} />
+//         </Button>
+//       </div> 

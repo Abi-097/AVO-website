@@ -1,9 +1,4 @@
-import {
-  faArrowUp,
-  faBars,
-  faBarsProgress,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // import { Button } from "./Button";
@@ -11,10 +6,25 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
+  const [navbar, Setnavbar] = useState(false);
+  
   const handleClick = () => setClick(!click);
+
+  const BackgroundChange = ()=> {
+    // console.log(window.scrollY)
+    if(window.scrollY >= 100){
+      Setnavbar(true)
+    } else {
+      Setnavbar(false)
+    }
+  }
+
+
+
+  window.addEventListener('scroll', BackgroundChange)
   return (
     <>
-      <nav className="navbar">
+      <nav className={navbar ? 'navbar-color' : 'navbar active'}>
         <div className="navbar-container">
           <Link to="/" className="navbar-logo">
           a<span style={{ color: '#d1002c' }}>v</span>o
