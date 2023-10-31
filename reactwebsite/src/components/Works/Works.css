@@ -1,3 +1,11 @@
+.work-body {
+  position: relative;
+  width: 100%;
+  background-color: #f3f3f3;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 65% 100%, 0% 85%);
+  padding-bottom: 7%;
+}
+
 .first-line {
   font-size: 16px;
   font-weight: bold;
@@ -18,44 +26,34 @@
   background: transparent !important;
   color: #000000 !important;
   font-size: 13px;
-  /* font-weight: 700; */
-  /* padding-left: 5%; */
-  /* line-height: 28.8px; */
   border: 1px solid #a0a0b4;
   width: 35%;
   padding: 0;
 }
 
 .button-transparent:hover {
-    color: #000000 !important;
+  color: #000000 !important;
 }
-
 
 .custom-co2l {
   display: flex;
   align-items: center;
 }
 
-
 .img-responsive {
   display: block;
-  margin: 0 auto; /* Center the image */
-  max-width: 100%; /* Make the image responsive */
+  margin: 0 auto;
+  max-width: 100%;
   height: auto;
 }
 
-/* test working */ 
 .custom-text-align {
-  text-align: right; /* Default right alignment */
+  text-align: right;
 
-  /* Left alignment for screens with a maximum width of 768px (adjust as needed) */
   @media (max-width: 768px) {
     text-align: left;
   }
 }
-/*  done */
-
-
 
 .text-left {
   text-align: left !important;
@@ -88,14 +86,29 @@
   }
 }
 
-
 @media (min-width: 993px) {
   .main-align {
     display: flex;
     align-items: start;
     justify-content: start;
-  text-align: left !important;
+    text-align: left !important;
   }
 }
 
-/* For screens 992px or smaller, reset the text alignment to the default */
+@media (min-width: 425px) {
+  .work-name {
+    order: 2 !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .work-last {
+    padding-bottom: 5%;
+  }
+}
+
+@media (min-width: 769px) {
+  .work-last {
+    margin-bottom: 51%;
+  }
+}

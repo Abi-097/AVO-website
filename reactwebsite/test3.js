@@ -319,3 +319,54 @@ export default HeroSection;
 //           <FontAwesomeIcon icon={faPlay} />
 //         </Button>
 //       </div> 
+
+
+
+
+<Container>
+<Row className="align-items-center justify-content-center"> {/* Add justify-content-center */}
+<Col xs={12} md={6}>
+<div className="custom-text-align">
+<div className="desc">
+          <div className="top">
+            {/* <p style={{ fontSize: "16px" }}>Web Design</p> */}
+            <h2 style={{ fontSize: "40px" }}>Cassette tape</h2>
+          </div>
+          <div className="absolute">
+      <p style={{ fontSize: "16px", color: "#a0a0b4" }}>
+        {/* Far far away, behind the word mountains, far from the */}
+        countries Vokalia and Consonantia, there live the blind texts.
+      </p>
+      <div className="icon d-flex justify-content-end align-items-center mb-4">
+        <div className="search-engine d-flex animate__animated animate__fadeInUp">
+          <Image
+            src={image2}
+            roundedCircle
+            width="60px"
+            height="60px"
+          />
+          <div className="text">
+            <h3>Jamie Jonson</h3>
+            <p style={{ textAlign: "left" }}>avo.com</p>
+          </div>
+        </div>
+      </div>
+            <Button
+              size="sm"
+              variant="secondary"
+              className="button-transparent"
+              style={{ transform: "scaleX(1.1)" }}
+            >
+              View Portfolio
+            </Button>
+          </div>
+        </div>
+</div>
+</Col>
+<Col xs={12} md={6}>
+<div className="work-name animate__animated animate__fadeInUp">
+  <img src={image1} width="404px" height="550px" alt="Image" />
+</div>
+</Col>
+</Row>
+</Container>

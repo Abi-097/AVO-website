@@ -1,24 +1,29 @@
-import React from 'react';
-import './Button.css'
-// import { type } from '@testing-library/user-event/dist/type';
+import React from "react";
+import "./Button.css";
 
-
-const Styles = ['btn--primary', 'btn--outline'];
-const Sizes = ['btn--medium', 'btn--large'];
-
+const Styles = ["btn--primary", "btn--outline"];
+const Sizes = ["btn--medium", "btn--large"];
 
 export const Button = ({
-    buttonStyle, buttonSize, children, type, onClick
+  buttonStyle,
+  buttonSize,
+  children,
+  type,
+  onClick,
 }) => {
-    const checkButtonStyle = Styles.includes(buttonStyle) ? buttonStyle : Styles[0];
+  const checkButtonStyle = Styles.includes(buttonStyle)
+    ? buttonStyle
+    : Styles[0];
 
-    const checkButtonSize = Sizes.includes(buttonSize) ? buttonSize : Sizes[0];
+  const checkButtonSize = Sizes.includes(buttonSize) ? buttonSize : Sizes[0];
 
-return(
-    <button className={`btn ${checkButtonStyle} ${checkButtonSize}`} onClick={onClick} type={type}
+  return (
+    <button
+      className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+      onClick={onClick}
+      type={type}
     >
-        {children}
+      {children}
     </button>
-)
-}
-
+  );
+};

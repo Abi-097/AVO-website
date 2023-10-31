@@ -1,0 +1,45 @@
+.finalcard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.finalcard-line {
+  margin: 16px;
+  text-align: center;
+}
+
+.finalcard-content {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.finalcard-content:hover {
+  cursor: pointer;
+}
+
+.finalcard-content1 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #a0a0b4;
+}
+
+.finalcard-content2:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.finalcard-content2 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.final-body {
+  position: relative;
+  width: 100%;
+  background-color: #f3f3f3;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 65% 100%, 0% 85%);
+  padding-bottom: 25%;
+}

@@ -1,20 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./HeroSection.css";
 import "../../App.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-// import { Button } from '../Button/Button';
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import image1 from "../../Assets/Images/image2.jpg";
 import image2 from "../../Assets/Images/image3.jpg";
-import Carousel from 'react-bootstrap/Carousel';
-// import ExampleCarouselImage from './components/ExampleCarouselImage';
+import Carousel from "react-bootstrap/Carousel";
 
 const HeroSection = () => {
   const [count, setCount] = useState(0);
@@ -24,7 +21,7 @@ const HeroSection = () => {
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
-  
+
   useEffect(() => {
     const timer = setInterval(() => {
       if (count < 400) {
@@ -50,14 +47,19 @@ const HeroSection = () => {
   }, [count2]);
   return (
     <div>
-     <div className="hero-container">
- <Carousel fade activeIndex={index} onSelect={handleSelect} interval={1000}>
-      <Carousel.Item>
-      <div className="matrix-shape">
-          <img src={image1} alt="image1" />
-        </div>
-        <div className="absolute">
-        <div className="slider-content">
+      <div className="hero-container">
+        <Carousel
+          fade
+          activeIndex={index}
+          onSelect={handleSelect}
+          interval={1000}
+        >
+          <Carousel.Item>
+            <div className="matrix-shape">
+              <img src={image1} alt="image1" />
+            </div>
+            <div className="absolute">
+              <div className="slider-content">
                 <Container>
                   <Row className="justify-content-center">
                     <Col sm={4}>
@@ -98,6 +100,7 @@ const HeroSection = () => {
                                 textAlign: "right",
                                 margin: "0",
                                 padding: "0",
+                                color: "white",
                               }}
                             >
                               More than a
@@ -108,6 +111,7 @@ const HeroSection = () => {
                                 textAlign: "right",
                                 margin: "0",
                                 padding: "0",
+                                color: "white",
                               }}
                             >
                               hundred successful
@@ -118,38 +122,38 @@ const HeroSection = () => {
                                 textAlign: "right",
                                 margin: "0",
                                 padding: "0",
+                                color: "white",
                               }}
                             >
                               projects
                             </p>
                           </div>
-                          {/* </div> */}
+
                           <p
                             className="text-right d-sm-none number-titlealign"
-                            style={{ fontSize: "14px" }}
+                            style={{ fontSize: "14px", color: "white" }}
                           >
                             More than a hundred successful projects
                           </p>
                         </div>
-                        {/* </div> */}
                       </div>
                     </Col>
                   </Row>
                   <div className="hero-btn">
-                <Button className="btn-circle">
-                  <FontAwesomeIcon icon={faPlay} />
-                </Button>
-              </div>
+                    <Button className="btn-circle">
+                      <FontAwesomeIcon icon={faPlay} />
+                    </Button>
+                  </div>
                 </Container>
-      
               </div>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item>
-      <div className="matrix-shape">
-      <img src={image2} alt="image2" /></div>
-        <div className="absolute">
-        <div className="slider-content">
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <div className="matrix-shape">
+              <img src={image2} alt="image2" />
+            </div>
+            <div className="absolute">
+              <div className="slider-content">
                 <Container>
                   <Row className="justify-content-center">
                     <Col sm={4}>
@@ -179,7 +183,7 @@ const HeroSection = () => {
                             <h1 className="count-wrapper">{count2}</h1>
                             <div className="vertical-line"></div>
                           </div>
-                          {/* <div class="text-container"> */}
+
                           <div
                             className="text-container"
                             style={{ display: "flex", flexDirection: "column" }}
@@ -190,9 +194,10 @@ const HeroSection = () => {
                                 textAlign: "right",
                                 margin: "0",
                                 padding: "0",
+                                color: "white",
                               }}
                             >
-                             Years of 
+                              Years of
                             </p>
                             <p
                               className="line"
@@ -200,6 +205,7 @@ const HeroSection = () => {
                                 textAlign: "right",
                                 margin: "0",
                                 padding: "0",
+                                color: "white",
                               }}
                             >
                               Experienced
@@ -208,9 +214,9 @@ const HeroSection = () => {
                           {/* </div> */}
                           <p
                             className="text-right d-sm-none number-titlealign"
-                            style={{ fontSize: "14px" }}
+                            style={{ fontSize: "14px", color: "white" }}
                           >
-                             Years of Experienced
+                            Years of Experienced
                           </p>
                         </div>
                         {/* </div> */}
@@ -218,24 +224,18 @@ const HeroSection = () => {
                     </Col>
                   </Row>
                   <div className="hero-btn">
-                <Button className="btn-circle">
-                  <FontAwesomeIcon icon={faPlay} />
-                </Button>
-              </div>
+                    <Button className="btn-circle">
+                      <FontAwesomeIcon icon={faPlay} />
+                    </Button>
+                  </div>
                 </Container>
-      
               </div>
-    
-          {/* <h3>First slide label</h3> */}
-          {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
-        </div>
-      </Carousel.Item>
-    </Carousel>
-    </div>
+            </div>
+          </Carousel.Item>
+        </Carousel>
       </div>
-    // {/* </div> */}
+    </div>
   );
 };
 
 export default HeroSection;
-

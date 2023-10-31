@@ -9,10 +9,6 @@ function App() {
  <Router>
  <Navbar/>
  <Home/>
- {/* <Switch> */}
-  {/* <Route path='/' exact /> */}
-
- {/* </Switch> */}
  </Router>
 
 
